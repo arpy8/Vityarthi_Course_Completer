@@ -1,6 +1,5 @@
 import os
 import time
-
 from bot_brain import Bot_Brain
 from app import test_app
 

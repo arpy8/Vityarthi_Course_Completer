@@ -1,4 +1,5 @@
 import time
+import pyautogui as pg
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
@@ -35,40 +36,48 @@ class Bot_Brain:
         for i in TO_CLICK:
             while switch_on:
                 try:
+                    """opening the module"""
                     self.driver.find_element(By.ID, f'chapter_{module_codes[i]}').click()
-                    time.sleep(2)
+                    time.sleep(1)
                     # //*[@id="collapseChapter48"]/div/div[1]/div/div[2]/div/label
                     j = 0
                     while True:
                         try:
                             j += 1
+                            """clicking video box to open it"""
                             self.driver.find_element(By.XPATH,
                                                      f'//*[@id="collapseChapter{module_codes[i]}"]/div/div[{j}]').click()
                             time.sleep(1)
+
+                            """clicking checkbox"""
                             self.driver.find_element(By.XPATH,
                                                      f'//*[@id="collapseChapter{module_codes[i]}"]/div/div[{j}]/div/div['
                                                      f'2]/div/label').click()
                             time.sleep(1)
-                            self.driver.find_element(By.XPATH,
-                                                     f'//*[@id="collapseChapter{module_codes[i]}"]/div/div[{j}]/div/div['
-                                                     f'2]/div/label').send_keys(Keys.DOWN)
-                            time.sleep(1)
-                            self.driver.find_element(By.XPATH, '/html/body/div[4]/div[1]/span[2]').click()
+
+                            """scrolling content page to avoid exception"""
+                            pg.press("pagedown")
                             time.sleep(2)
 
                         except NoSuchElementException:
-                            print(f"Module {i + 1} completed.")
+                            print(f"Module {i+1} completed.")
                             switch_on = False
                             break
 
                         except ElementNotInteractableException:
-                            print(f"1. ElementNotInteractableException; module: {i + 1}, vid: {j}")
-                            self.driver.find_element(By.XPATH, '/html/body/div[4]/div[1]/span[2]').send_keys(Keys.UP)
-                            self.driver.find_element(By.XPATH, '/html/body/div[4]/div[1]/span[2]').send_keys(Keys.UP)
+                            print(f"1. Inner ElementNotInteractableException; module: {i + 1}, vid: {j}")
+                            # self.driver.find_element(By.XPATH, '//*[@id="collapseChapter{module_codes[i]}"]/div/div[{'
+                            #                                    'j}]').send_keys(Keys.PAGE_DOWN)
+                            pass
 
                         except ElementClickInterceptedException:
-                            print(f"2. ElementClickInterceptedException; module: {i + 1}, vid: {j}")
+                            print(f"2. Inner ElementClickInterceptedException; module: {i + 1}, vid: {j}")
+
+                except ElementNotInteractableException:
+                    print(f"1. Outer ElementNotInteractableException:  {i + 1}, vid: {j}")
+                    pass
 
                 except ElementClickInterceptedException:
-                    print(f"exception :  {i + 1}, vid : {j}")
+                    print(f"2. Outer ElementClickInterceptedException: Module {i + 1}, vid: {j}")
                     pass
+
