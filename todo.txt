@@ -1,0 +1,3 @@
+app crashes after certain clicking videos randomly
+cause : ?
+solution : used switch method
