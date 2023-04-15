@@ -20,13 +20,6 @@ class Bot_Brain:
         self.driver.find_element(By.ID, "password").send_keys(PASS)
         self.driver.find_element(By.ID, "password").send_keys(Keys.ENTER)
 
-    def toast_remover(self):
-        pass
-
-    #
-    # /html/body/div[4]/div[4]/span[2]
-    # /html/body/div[4]/div[2]/span[2]
-
     def engine(self, TO_CLICK):
         self.driver.get(url="https://vityarthi.com/course/learning/Python-Essentials")
         time.sleep(2)
@@ -39,7 +32,6 @@ class Bot_Brain:
                     """opening the module"""
                     self.driver.find_element(By.ID, f'chapter_{module_codes[i]}').click()
                     time.sleep(1)
-                    # //*[@id="collapseChapter48"]/div/div[1]/div/div[2]/div/label
                     j = 0
                     while True:
                         try:
@@ -49,29 +41,37 @@ class Bot_Brain:
                                                      f'//*[@id="collapseChapter{module_codes[i]}"]/div/div[{j}]').click()
                             time.sleep(1)
 
+                            """scrolling content page to avoid exception"""
+                            self.driver.find_element(By.XPATH,
+                                                     f'//*[@id="collapseChapter{module_codes[i]}"]/div/div[{j}]/div/div['
+                                                     f'2]/div/label').send_keys(Keys.END)
+
+                        except ElementNotInteractableException:
+                            print(f"1. Inner ElementNotInteractableException; module: {i + 1}, vid: {j}")
+
+                            # scrolling
+                            # self.driver.find_element(By.XPATH,
+                            #                          f'//*[@id="collapseChapter{module_codes[i]}"]/div/div[{j}]/div/div['
+                            #                          f'2]/div/label').send_keys("END")
+
+                        except ElementClickInterceptedException:
+                            print(f"2. Inner ElementClickInterceptedException; module: {i + 1}, vid: {j}")
+
+                        except NoSuchElementException:
+                            print(f"Module {i + 1} completed.")
+                            switch_on = False
+                            break
+                        else:
+                            """focussing back on element"""
+                            self.driver.find_element(By.XPATH,
+                                                     f'//*[@id="collapseChapter{module_codes[i]}"]/div/div[{j}]/div/div['
+                                                     f'2]/div/label').send_keys("")
+
                             """clicking checkbox"""
                             self.driver.find_element(By.XPATH,
                                                      f'//*[@id="collapseChapter{module_codes[i]}"]/div/div[{j}]/div/div['
                                                      f'2]/div/label').click()
                             time.sleep(1)
-
-                            """scrolling content page to avoid exception"""
-                            pg.press("pagedown")
-                            time.sleep(2)
-
-                        except NoSuchElementException:
-                            print(f"Module {i+1} completed.")
-                            switch_on = False
-                            break
-
-                        except ElementNotInteractableException:
-                            print(f"1. Inner ElementNotInteractableException; module: {i + 1}, vid: {j}")
-                            # self.driver.find_element(By.XPATH, '//*[@id="collapseChapter{module_codes[i]}"]/div/div[{'
-                            #                                    'j}]').send_keys(Keys.PAGE_DOWN)
-                            pass
-
-                        except ElementClickInterceptedException:
-                            print(f"2. Inner ElementClickInterceptedException; module: {i + 1}, vid: {j}")
 
                 except ElementNotInteractableException:
                     print(f"1. Outer ElementNotInteractableException:  {i + 1}, vid: {j}")

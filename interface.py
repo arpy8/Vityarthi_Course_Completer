@@ -1,7 +1,7 @@
 import PySimpleGUI as psg
 
 
-def test_app():
+def main_app():
     psg.set_options(font=('Arial Bold', 12))
     psg.theme('DarkBrown4')
     layout = [
