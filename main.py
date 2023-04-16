@@ -15,4 +15,3 @@ if switch_on:
     app.login(data['email'], data['password'])
     app.engine(user_input)
 
-time.sleep(600)
