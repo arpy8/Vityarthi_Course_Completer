@@ -1,4 +1,3 @@
-import time
 import json
 from interface import App
 from bot_brain import Bot_Brain
