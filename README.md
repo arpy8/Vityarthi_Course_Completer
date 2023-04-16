@@ -1,3 +1,4 @@
+# Vityarthi Course Completer
 Web automation program designed to complete your [Vityarthi Python Course](https://vityarthi.com/course/Python-Essentials)! This program is designed to help save you time and effort by automating the repetitive tasks of marking the videos as done.
 
 # How to Use
