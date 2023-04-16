@@ -1,3 +1,0 @@
-app crashes after certain clicking videos randomly
-cause : element is not focused
-temp solution - pyautogui
