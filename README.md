@@ -22,7 +22,7 @@ The program will automatically go through each video and mark it as done for eve
 - Avoid interacting with the machine while the programming is running, since doing that would result in an error and cause the program to crash.
 
 # Demo
-![demo.gif](assets/demo.gif)
+![demo](assets/demo.gif)
 
 # Please Note
 While this program is designed to automate the process of taking online courses, it is important to note that it should be used ethically and responsibly. It is your responsibility to ensure that you are using the program in accordance with the terms and conditions of the online course website and any applicable laws. 
