@@ -9,7 +9,7 @@ from selenium.common.exceptions import NoSuchElementException, ElementNotInterac
 
 class Bot_Brain:
     def __init__(self):
-        self.driver = webdriver.Chrome(executable_path="chromedriver.exe")
+        self.driver = webdriver.Chrome(executable_path="assets/chromedriver.exe")
 
     def login(self, GMAIL, PASS):
         self.driver.maximize_window()

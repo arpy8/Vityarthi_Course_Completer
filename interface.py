@@ -17,7 +17,7 @@ class App:
             [psg.OK(), psg.Cancel()]
         ]
 
-        window = psg.Window('Vityarthi_Crack', layout, icon="logo.ico")
+        window = psg.Window('Vityarthi_Crack', layout, icon="assets/logo.ico")
         event, values = window.read()
         response = values
         modules_selected = []
