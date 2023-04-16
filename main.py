@@ -6,7 +6,7 @@ switch_on = False
 user_input = App().main_app()
 switch_on = True
 
-with open('user_login_info.json', 'r') as file:
+with open('user_info.json', 'r') as file:
     data = json.load(file)
 
 if switch_on:
