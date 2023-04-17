@@ -16,7 +16,7 @@ The program will automatically go through each video and mark it as done for eve
 
 ### Few things I'd like to mention:
 - This project is still under development.
-- There's a bug which doesn't allow this app to complete module 1, avoid selecting it. I'm try resolving it asap.
+- There's a bug which doesn't allow this app to complete module 1, avoid selecting it. I'll try resolving it asap.
 - Please keep in mind my program's basic work is to just trigger the "I passed this lesson" button for every video, so in case there is any video which is already marked as done, the bot will click it too.
 - Avoid interacting with the machine while the programming is running, since doing that would result in an error and cause the program to crash.
 
