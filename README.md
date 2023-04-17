@@ -7,10 +7,21 @@ Web automation program designed to complete your [Vityarthi Course](https://vity
   git clone https://github.com/arpy8/vityarthi-course-completer
 ```
 
-- Do these before running "main.py"
-  - Install latest ChromeDriver from the official website. ([already included](https://github.com/arpy8/vityarthi-course-completer/blob/main/assets/chromedriver.exe))
-  - Edit "user_info.txt" and enter your details accordingly. 
+- change directory to your local repo in cmd
+```
+  cd vityarthi-course-completer
+```
+
+- Install required libraries
+```
+  pip install -r requirements.txt
+```
+
+
+### Do these before running "main.py"
   - Go to [settings](https://vityarthi.com/panel/setting) in vityarthi and enter your email (college email) and password.
+  - Enter the same id/pass in "user_info.txt" and save it. 
+  - Finally, run main.py
 
 The program will automatically go through each video and mark it as done for every module that is specified, allowing you to focus on other important things while the program does the work. 
 
