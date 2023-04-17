@@ -25,8 +25,9 @@ class Bot_Brain:
 
     def engine(self, COURSE, TO_CLICK):
 
-        def inner_brain(i):
-            exceptions = []
+        self.driver.get(url=self.course_codes[COURSE])
+        time.sleep(2)
+        for i in TO_CLICK:
             try:
                 """opening the module"""
                 self.driver.find_element(By.ID, f'chapter_{self.module_codes[i]}').click()
@@ -51,28 +52,22 @@ class Bot_Brain:
                         pg.press("pagedown")
 
                     except ElementNotInteractableException and ElementClickInterceptedException:
-                        exceptions += f"Module: {i + 1}, vid: {j}"
+                        print(f"Exception- Module: {i + 1}, vid: {j}")
+                        pass
                     except ElementClickInterceptedException:
-                        exceptions += f"Module: {i + 1}, vid: {j}"
+                        print(f"Exception- Module: {i + 1}, vid: {j}")
+                        pass
                     except NoSuchElementException:
                         print(f"Module {i + 1} completed.")
                         break
 
             except ElementNotInteractableException:
-                exceptions += f"Module: {i + 1}, vid: {j}"
+                print(f"Exception- Module: {i + 1}, vid: {j}")
+                pass
             except ElementClickInterceptedException:
-                exceptions += f"Module: {i + 1}, vid: {j}"
+                print(f"Exception- Module: {i + 1}, vid: {j}")
+                pass
             except NoSuchWindowException:
                 print("Window closed.")
-                exit()
 
-            exceptions = set(exceptions)
-            print("Exception List:\n")
-            for items in exceptions:
-                print(items)
-
-        self.driver.get(url=self.course_codes[COURSE])
-        time.sleep(2)
-
-        for i in TO_CLICK:
-            inner_brain(i)
+        exit()
