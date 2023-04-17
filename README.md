@@ -35,10 +35,5 @@ The program will automatically go through each video and mark it as done for eve
 <img src="assets/demo.gif" width="1400">
 <p style="text-align:center;">(2x speed)</p>
 
-# Please Note
-While this program is designed to automate the process of taking online courses, it is important to note that it should be used ethically and responsibly. It is your responsibility to ensure that you are using the program in accordance with the terms and conditions of the online course website and any applicable laws. 
-
-This program is designed to save you time and effort, it is still important to actively engage with the course material and ensure that you are actually learning and retaining the information presented in the course.
-
-# Conclusion
-Thank you for using my web automation program! I hope that it helps you to save time and effort while taking the online course. If you have any questions or face any issue, please don't hesitate to reach out to [me](mailto:arpitsengar99@gmail.com).
+# Contact
+If you have any questions or face any issue, please don't hesitate to reach out to [me](mailto:arpitsengar99@gmail.com).
