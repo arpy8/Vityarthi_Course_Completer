@@ -49,25 +49,16 @@ class Bot_Brain:
                         """scrolling content page to avoid exception"""
                         pg.press("pagedown")
 
+                    except ElementNotInteractableException or ElementClickInterceptedException:
+                        print(f"Inner exception at: {i+1}, vid: {j}")
+                        pass
                     except NoSuchElementException:
                         print(f"Module {i+1} completed.")
                         break
 
-                    except ElementNotInteractableException:
-                        print(f"1. Inner ElementNotInteractableException; module: {i + 1}, vid: {j}")
-                        pass
-
-                    except ElementClickInterceptedException:
-                        print(f"2. Inner ElementClickInterceptedException; module: {i + 1}, vid: {j}")
-
-            except ElementNotInteractableException:
-                print(f"1. Outer ElementNotInteractableException:  {i + 1}, vid: {j}")
+            except ElementNotInteractableException or ElementClickInterceptedException:
+                print(f"Outer exception at: {i+1}, vid: {j}")
                 pass
-
-            except ElementClickInterceptedException:
-                print(f"2. Outer ElementClickInterceptedException: Module {i + 1}, vid: {j}")
-                pass
-
             except NoSuchWindowException:
                 print("Window closed.")
                 exit()

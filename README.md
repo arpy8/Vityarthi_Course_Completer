@@ -23,6 +23,7 @@ The program will automatically go through each video and mark it as done for eve
 
 # Demo
 <img src="assets/demo.gif" width="1400">
+<p style="text-align:center;">(2x speed)</p>
 
 # Please Note
 While this program is designed to automate the process of taking online courses, it is important to note that it should be used ethically and responsibly. It is your responsibility to ensure that you are using the program in accordance with the terms and conditions of the online course website and any applicable laws. 
