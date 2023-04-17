@@ -5,8 +5,11 @@ class App:
 
     def main_app(self):
         psg.set_options(font=('Arial Bold', 12))
-        psg.theme('DarkBrown4')
+        psg.theme('DarkBlack')
         layout = [
+            [psg.Text('Select course')],
+            [psg.Radio("Python Essentials", "gen", key='C1')],
+            [psg.Radio("Fundamentals of AI and ML", "gen", key='C2')],
             [psg.Text('Select modules')],
             [psg.Checkbox('Module 01', key=0), psg.Checkbox('Module 02', key=1)],
             [psg.Checkbox('Module 03', key=2), psg.Checkbox('Module 04', key=3)],
@@ -17,15 +20,22 @@ class App:
             [psg.OK(), psg.Cancel()]
         ]
 
-        window = psg.Window('Vityarthi_Crack', layout, icon="assets/logo.ico")
+        window = psg.Window('crack', layout, icon="assets/logo.ico")
         event, values = window.read()
         response = values
         modules_selected = []
+        course_selected = 0
         for i in range(12):
+            try:
+                if response[f"C{i}"]:
+                    course_selected = i
+            except KeyError:
+                pass
+
             if response[i]:
                 modules_selected.append(i)
+
+        package = [course_selected, modules_selected]
         window.close()
-        return modules_selected
-
-
+        return package
 

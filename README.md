@@ -1,5 +1,5 @@
 # Vityarthi Course Completer
-Web automation program designed to complete your [Vityarthi Python Course](https://vityarthi.com/course/Python-Essentials)! This program is designed to help save you time and effort by automating the repetitive tasks of marking the videos as done.
+Web automation program designed to complete your [Vityarthi Python Course](https://vityarthi.com/classes?sort=newest)! This program is designed to help save you time and effort by automating the repetitive tasks of marking the videos as done.
 
 # Installation
 - Clone the repo using:  
@@ -16,7 +16,6 @@ The program will automatically go through each video and mark it as done for eve
 
 ### Few things I'd like to share about this project:
 - This project is still under developmental phase.
-- For now this app can work only on the "Python Essentials Course".
 - There's a bug which doesn't allow this app to complete module 1, avoid selecting it. I'll try to resolve it asap.
 - Please keep in mind my program's basic work is to just trigger the "I passed this lesson" button for every video, so in case there is any video which is already marked as done, the bot will click it too.
 - Avoid interacting with the machine while the programming is running, since doing that would result in an error and cause the program to crash.
@@ -31,4 +30,4 @@ While this program is designed to automate the process of taking online courses,
 This program is designed to save you time and effort, it is still important to actively engage with the course material and ensure that you are actually learning and retaining the information presented in the course.
 
 # Conclusion
-Thank you for using my web automation program! I hope that it helps you to save time and effort while taking the online course. If you have any questions or face any issue, please don't hesitate to reach out to me.
+Thank you for using my web automation program! I hope that it helps you to save time and effort while taking the online course. If you have any questions or face any issue, please don't hesitate to reach out to [me](mailto:arpitsengar99@gmail.com).

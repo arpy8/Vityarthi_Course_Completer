@@ -1,3 +1,4 @@
+import os
 import json
 from interface import App
 from bot_brain import Bot_Brain
@@ -11,6 +12,7 @@ with open('user_info.json', 'r') as file:
 
 if switch_on:
     app = Bot_Brain()
+    # app.login(os.getenv("CGMAIL"), os.getenv("PASSWORD"))
     app.login(data['email'], data['password'])
-    app.engine(user_input)
+    app.engine(user_input[0], user_input[1])
 
