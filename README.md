@@ -36,5 +36,4 @@ The program will automatically go through each video and mark it as done for eve
 <img src="assets/demo.gif" width="1400">
 
 
-# Contact
-If you have any questions or face any issue, please don't hesitate to reach out to [me](mailto:arpitsengar99@gmail.com).
+
